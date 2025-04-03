@@ -60,8 +60,8 @@ nav ul li:hover a {
 }
 
 #mySelf img {
-    width: 100px;
-    height: 100px;
+    width: 150px;
+    height: 150px;
     border-radius: 50%;
     box-shadow: 10px 10px 20px #000;
 }
@@ -86,6 +86,7 @@ nav ul li:hover a {
     border-radius: 5px;
     margin-top: 10px;
     border: 1px solid bisque;
+    cursor: pointer;
 }
 
 .buttonMySelf:hover {
@@ -132,6 +133,7 @@ nav ul li:hover a {
     text-align: center;
     margin-top: 10px;
     border: 1px solid bisque;
+    cursor: pointer;
 }
 
 .divBtn {
