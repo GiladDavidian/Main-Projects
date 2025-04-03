@@ -10,6 +10,8 @@ body {
 
 .container {
     background-color: black;
+    position: sticky;
+    top: 0;
 }
 
 nav {
@@ -35,7 +37,6 @@ nav ul li:hover a {
 }
 
 .header2 {
-    width: 100vw;
     height: 460px;
     background-image: url(beige3.jpg);
     text-align: center;
@@ -62,6 +63,7 @@ nav ul li:hover a {
     width: 100px;
     height: 100px;
     border-radius: 50%;
+    box-shadow: 10px 10px 20px #000;
 }
 
 .mySelf h1 {
@@ -84,4 +86,80 @@ nav ul li:hover a {
     border-radius: 5px;
     margin-top: 10px;
     border: 1px solid bisque;
+}
+
+.buttonMySelf:hover {
+    color: black;
+    background-color: bisque;
+    border: 1px solid #000;
+}
+
+.projects {
+    height: 1500px;
+    background-image: url(beige3.jpg);
+    margin-top: 100px;
+    display: grid;
+    align-items: center;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+}
+
+.boxProject {
+    width: 400px;
+    height: 600px;
+    margin: 0 auto;
+    background-color: white;
+    box-shadow: 10px 10px 20px #000;
+}
+
+.boxProject img {
+    width: 400px;
+    height: 400px;
+}
+
+.boxProject h1 {
+    text-align: center;
+    padding: 15px;
+}
+
+.boxProject button {
+    direction: rtl;
+    background-color: black;
+    color: bisque;
+    font-size: 1.5rem;
+    padding: 7px;
+    border-radius: 5px;
+    text-align: center;
+    margin-top: 10px;
+    border: 1px solid bisque;
+}
+
+.boxProject button:hover {
+    color: black;
+    background-color: bisque;
+    border: 1px solid #000;
+}
+
+@media(max-width:576px) {
+    .projects {
+        height: 800px;
+    }
+
+    .boxProject {
+        width: 150px;
+        height: 300px;
+        margin: 0 auto;
+        background-color: white;
+        box-shadow: 10px 10px 20px #000;
+    }
+
+    .boxProject img {
+        width: 150px;
+        height: 150px;
+    }
+
+    .boxProject button {
+        text-align: center;
+        font-size: 1rem;
+    }
 }
