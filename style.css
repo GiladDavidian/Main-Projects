@@ -52,6 +52,7 @@ nav ul li:hover a {
 .header2 p {
     margin-top: 20px;
     direction: rtl;
+    font-size: 1.2rem;
 }
 
 .mySelf {
@@ -134,10 +135,44 @@ nav ul li:hover a {
     border: 1px solid bisque;
 }
 
+.divBtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .boxProject button:hover {
     color: black;
     background-color: bisque;
     border: 1px solid #000;
+}
+
+footer {
+    height: 200px;
+    background-color: black;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+footer a {
+    font-size: 100px;
+    text-decoration: none;
+}
+
+footer a svg {
+    fill: white;
+    width: 4rem;
+    height: 4rem;
+    cursor: pointer;
+}
+
+.createdBy {
+    height: 50px;
+    background-color: black;
+    color: aliceblue;
+    text-align: center;
+    padding: 20px;
 }
 
 @media(max-width:576px) {
@@ -150,7 +185,7 @@ nav ul li:hover a {
         height: 300px;
         margin: 0 auto;
         background-color: white;
-        box-shadow: 10px 10px 20px #000;
+        box-shadow: 10px 10px 20px black;
     }
 
     .boxProject img {
