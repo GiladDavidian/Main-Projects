@@ -44,7 +44,6 @@ nav ul li:hover a {
 }
 
 #header2 h1 {
-
     font-size: 3.5rem;
     direction: rtl;
 }
@@ -176,7 +175,11 @@ nav ul li:hover a {
 }
 
 @media(max-width:576px) {
-    .projects {
+    #header2 p {
+        font-size: 1.1rem;
+    }
+
+    #projects {
         height: 800px;
     }
 
