@@ -1,0 +1,87 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: arial;
+}
+
+.container {
+    background-color: black;
+}
+
+nav {
+    padding: 20px 0;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    gap: 20px;
+}
+
+nav ul li a {
+    font-size: 1.7rem;
+    color: bisque;
+    text-decoration: none;
+}
+
+nav ul li:hover a {
+    color: aliceblue;
+}
+
+.header2 {
+    width: 100vw;
+    height: 460px;
+    background-image: url(beige3.jpg);
+    text-align: center;
+    padding-top: 100px;
+}
+
+.header2 h1 {
+
+    font-size: 3.5rem;
+    direction: rtl;
+}
+
+.header2 p {
+    margin-top: 20px;
+    direction: rtl;
+}
+
+.mySelf {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.mySelf img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+.mySelf h1 {
+    direction: rtl;
+    margin-top: 10px;
+}
+
+.mySelf p {
+    direction: rtl;
+    font-family: arial;
+    margin-top: 20px;
+    font-size: 1.2rem;
+}
+
+.buttonMySelf {
+    background-color: black;
+    color: bisque;
+    font-size: 1.5rem;
+    padding: 7px;
+    border-radius: 5px;
+    margin-top: 10px;
+    border: 1px solid bisque;
+}
