@@ -123,7 +123,7 @@ nav ul li:hover a {
     padding: 15px;
 }
 
-.boxProject button {
+.boxProject a {
     direction: rtl;
     background-color: black;
     color: bisque;
@@ -134,15 +134,16 @@ nav ul li:hover a {
     margin-top: 10px;
     border: 1px solid bisque;
     cursor: pointer;
+    text-decoration: none;
 }
 
-.divBtn {
+.divA {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.boxProject button:hover {
+.boxProject a:hover {
     color: black;
     background-color: bisque;
     border: 1px solid #000;
