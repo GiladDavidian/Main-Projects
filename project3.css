@@ -1,0 +1,29 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #E5EEFF;
+}
+
+.container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box {
+    width: 1214px;
+    height: 506px;
+    background-color: #1A1A1AD4;
+}
+
+@media(max-width: 576px) {
+    .box {
+        width: 322px;
+        height: 506px;
+    }
+}

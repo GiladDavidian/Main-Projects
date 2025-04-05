@@ -1,0 +1,44 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #E5EEFF;
+}
+
+.container {
+    display: flex;
+    justify-content: right;
+}
+
+.containerBox {
+    width: 50vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    text-align: right;
+}
+
+.box {
+    width: 438px;
+    height: 506px;
+    background-color: #1A1A1AD4;
+}
+
+@media(max-width: 576px) {
+    .container {}
+
+    .containerBox {
+        width: 100vw;
+        height: 50vh;
+    }
+
+    .box {
+        width: 286px;
+        height: 316px;
+    }
+}

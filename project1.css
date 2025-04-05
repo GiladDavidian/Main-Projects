@@ -52,3 +52,5 @@ body {
     background-color: #D3E10E;
     color: #011560;
 }
+
+@media(max-width: 576px) {}
