@@ -5,7 +5,7 @@
 }
 
 body {
-    background-color: #E5EEFF;
+    background: linear-gradient(180deg, rgba(40, 30, 255, 1) 0%, rgba(45, 255, 140, 1) 100%);
 }
 
 .container {
@@ -18,7 +18,65 @@ body {
 .box {
     width: 1214px;
     height: 506px;
-    background-color: #1A1A1AD4;
+    direction: rtl;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #FFFFFF;
+}
+
+.box h1 {
+    font: normal normal normal 160px/231px Satisfy;
+}
+
+.p1 {
+    font: normal normal normal 32px/38px Varela Round;
+}
+
+.p2 {
+    font: normal normal normal 16px/20px Varela Round;
+    color: #F9F9F9;
+    padding: 30px;
+}
+
+form {
+    display: flex;
+    align-items: flex-end;
+    gap: 1vw;
+}
+
+.nameInput,
+.mail {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.nameInput {
+    margin-left: 20px;
+}
+
+label {
+    display: block;
+    font: normal normal normal 16px/20px Varela Round;
+}
+
+input {
+    font-size: 1.7rem;
+    width: 418px;
+    height: 50px;
+    background: #F6F6F624 0% 0% no-repeat padding-box;
+    border: 2px solid #FFFFFF;
+}
+
+button {
+    width: 206px;
+    height: 50px;
+    font: normal normal normal 16px/20px Varela Round;
+    color: #1C1C1C;
+    background-color: white;
 }
 
 @media(max-width: 576px) {
