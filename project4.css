@@ -4,8 +4,13 @@
     box-sizing: border-box;
 }
 
-body {
+body {}
+
+.bgImg {
+    width: 55vw;
+    height: 100vh;
     background-image: url(Coffee.png);
+    background-size: cover;
 }
 
 .container {
@@ -78,15 +83,9 @@ button {
 }
 
 @media(max-width: 576px) {
-    .container {}
-
-    .containerBox {
-        width: 100vw;
-        height: 50vh;
+    .bgImg {
+        width: 370px;
+        height: 219px;
     }
 
-    .box {
-        width: 286px;
-        height: 316px;
-    }
 }
