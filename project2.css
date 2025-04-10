@@ -5,7 +5,7 @@
 }
 
 .bgImg {
-    height: 50vh;
+    height: 59vh;
     background-image: url(purple.png);
     background-size: cover;
 
@@ -16,6 +16,7 @@
     height: 100vh;
     display: flex;
     justify-content: center;
+    padding-inline: 30px;
 }
 
 .box {
@@ -25,11 +26,14 @@
     margin-left: 50vw;
     background-color: #1A1A1AD4;
     direction: rtl;
-    text-align: center;
+}
+
+.boxWraper {
+    padding-inline: 10%;
 }
 
 .box h1 {
-    font-size: 36px;
+    font-size: 38px;
     font-family: 'Heebo', Black;
     color: #FFFFFF;
     margin-top: 70px;
@@ -37,13 +41,21 @@
 
 .box p {
     font-size: 20px;
-    font-family: 'Heebo', Regular;
+    font-family: 'Heebo';
     color: #F9F9F9;
     margin-top: 20px;
+    line-height: 2rem;
+    font-weight: 400;
+    padding: 10px;
 }
 
-.nameInput,
-.mailInput {}
+.form1 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 25px;
+    margin-top: 50px;
+}
 
 label {
     display: block;
@@ -68,13 +80,16 @@ label {
     font-family: 'Heebo', Black;
     color: #FFFFFF;
     background-color: #D31C75;
+    margin-top: 15px;
+    cursor: pointer;
 }
 
 @media(max-width: 576px) {
     .bgImg {
-        height: 213px;
+        height: 30vh;
         background-image: url(purple.png);
         background-size: cover;
+        background-position: center;
     }
 
     .container {
@@ -82,13 +97,50 @@ label {
         height: 100vh;
         display: flex;
         justify-content: center;
-        align-items: center;
     }
 
     .box {
         width: 299px;
-        height: 441px;
-        margin-top: 0;
+        height: 460px;
+        margin-top: 89px;
         margin-left: 0;
+    }
+
+    .box h1 {
+        padding: 20px;
+        font-size: 1.7rem;
+        text-align: center;
+        margin-top: 20px;
+        font-weight: 1000;
+    }
+
+    .box p {
+        text-align: center;
+        line-height: 1.5rem;
+        font-size: 1rem;
+        padding: 0;
+        margin-top: 0;
+    }
+
+    .form1 {
+        margin-top: 20px;
+    }
+
+    label {
+        font-size: 14px;
+    }
+
+    .textInput {
+        width: 230px;
+        height: 28px;
+    }
+
+    .buttonInput {
+        width: 76px;
+        height: 33px;
+        font-size: 15px;
+        font-family: 'Heebo', Black;
+        margin-top: 0;
+        border: 0;
     }
 }
