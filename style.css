@@ -95,6 +95,29 @@ nav ul li:hover a {
     border: 1px solid #000;
 }
 
+.divChatBot {
+    margin-top: 13px;
+    direction: rtl;
+}
+
+.chatBot {
+    background-color: black;
+    color: bisque;
+    font-size: 1.5rem;
+    padding: 7px;
+    border-radius: 5px;
+    border: 1px solid bisque;
+    text-decoration: none;
+}
+
+.chatBot:hover {
+    color: black;
+    background-color: bisque;
+    border: 1px solid #000;
+}
+
+
+
 #projects {
     height: 1500px;
     background-image: url(beige3.jpg);
