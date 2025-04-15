@@ -55,6 +55,7 @@
             margin: 0 auto;
             display: flex;
             gap: 10px;
+            direction: rtl;
         }
 
         input {
@@ -64,6 +65,13 @@
 
         button {
             padding: 5px 10px;
+        }
+
+        .warning {
+            direction: rtl;
+            text-align: center;
+            color: black;
+            font-weight: bold;
         }
     </style>
 </head>
@@ -83,6 +91,8 @@
         <input type="text" id="userInput" placeholder="כתוב הודעה...">
         <button onclick="sendMessage()">שלח</button>
     </div>
+    <p class="warning">הבוט משתמש במפתח API של גוגל, הבוט עלול לטעות ולכן יש לבדוק היטב את התשובות שלו.</p>
+
 
     <script>
         // מפתח ה-API שסיפקת

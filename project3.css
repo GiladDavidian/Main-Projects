@@ -16,8 +16,8 @@ body {
 }
 
 .box {
-    width: 1214px;
-    height: 506px;
+    width: 100%;
+    height: 100%;
     direction: rtl;
     text-align: center;
     display: flex;
@@ -82,24 +82,61 @@ input {
 }
 
 @media(max-width: 576px) {
+    .container {
+        align-items: unset;
+    }
+
     .box {
-        width: 322px;
-        height: 506px;
+        justify-content: unset;
     }
 
     .box h1 {
-        font: normal normal normal 60px/86px Satisfy;
+        font-size: 4.5rem;
+        text-shadow: 0px 0px 36px #00000087;
+        margin-top: 20px;
     }
 
     .p1 {
-        font: normal normal normal 18px/22px Varela Round;
+        font-size: 1.4rem;
+        opacity: 0.9;
+        margin-block: -10px 20px;
     }
 
     .p2 {
         font: normal normal normal 16px/20px Varela Round;
+        opacity: 0.9;
+        padding: 0;
+        padding-inline: 90px;
     }
 
     form {
-        display: block;
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding-inline: 40px;
+        margin-top: 50px;
+    }
+
+    label {
+        margin-top: 20px;
+    }
+
+    input {
+        width: 100%;
+    }
+
+    .nameInput {
+        margin-left: unset;
+    }
+
+    .nameInput,
+    .mail {
+        width: 100%;
+    }
+
+    .inputButton {
+        width: 100%;
+        margin-top: 20px;
     }
 }
