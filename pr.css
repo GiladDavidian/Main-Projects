@@ -217,6 +217,7 @@ body {
 }
 
 #projects {
+    height: 1500px;
     background-image: url(beige3.jpg);
     margin-top: 100px;
     display: grid;
@@ -224,20 +225,25 @@ body {
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(2, 1fr);
     direction: rtl;
-    padding: 50px;
-    gap: 100px;
 }
 
 .boxProject {
     width: 400px;
+    height: 600px;
     margin: 0 auto;
     background-color: white;
     box-shadow: 10px 10px 20px #000;
 }
 
 .boxProject img {
-    width: 100%;
-    height: auto;
+    width: 400px;
+    height: 400px;
+    background-size: contain;
+}
+
+.boxProject img {
+    width: 400px;
+    height: 400px;
 }
 
 .boxProject h1 {
@@ -246,14 +252,15 @@ body {
 }
 
 .boxProject a {
-    width: 100%;
     direction: rtl;
     background-color: black;
     color: bisque;
     font-size: 1.5rem;
     padding: 7px;
+    border-radius: 5px;
     text-align: center;
     margin-top: 10px;
+    border: 1px solid bisque;
     cursor: pointer;
     text-decoration: none;
 }
@@ -261,7 +268,7 @@ body {
 .divA {
     display: flex;
     justify-content: center;
-    align-items: end;
+    align-items: center;
 }
 
 .boxProject a:hover {
@@ -298,7 +305,8 @@ body {
     padding: 20px;
 }
 
-@media(max-width:576px) {
+/* Media query for small screens (mobile) */
+@media (max-width: 576px) {
     .desktop-nav {
         display: none;
         /* Hide desktop nav */
@@ -324,29 +332,52 @@ body {
     }
 
     #projects {
-        grid-template-columns: repeat(1, 1fr);
+        height: auto;
+        /* Adjust height based on content */
+        grid-template-columns: 1fr;
+        /* Single column layout */
         grid-template-rows: repeat(6, auto);
-        gap: 50px;
+        /* Adjust rows based on number of projects */
     }
 
     .boxProject {
         width: 90%;
+        /* Adjust width for smaller screens */
         height: auto;
+        /* Adjust height based on content */
         margin: 20px auto;
     }
 
     .boxProject img {
         width: 100%;
         height: auto;
+        /* Maintain aspect ratio */
     }
 
-    .boxProject button {
-        text-align: center;
-        font-size: 1rem;
+    .boxProject h1 {
+        font-size: 1.8rem;
+    }
+
+    .boxProject a {
+        font-size: 1.2rem;
+    }
+
+    #contact {
+        flex-direction: column;
+        /* Stack icons vertically */
+        align-items: center;
+        height: auto;
+        padding: 20px 0;
+        gap: 20px;
+    }
+
+    #contact a {
+        font-size: 3rem;
     }
 }
 
-@media (min-width: 576px) {
+/* Media query for larger screens (desktop) */
+@media (min-width: 577px) {
     .hamburger-menu {
         display: none;
         /* Hide hamburger menu on larger screens */
@@ -360,4 +391,32 @@ body {
         justify-content: center;
         /* Center the navigation links */
     }
+}
+
+.container {
+    background-color: black;
+    position: sticky;
+    top: 0;
+}
+
+nav {
+    padding: 20px 0;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    gap: 20px;
+}
+
+nav ul li a {
+    font-size: 1.7rem;
+    color: bisque;
+    text-decoration: none;
+}
+
+nav ul li:hover a {
+    color: aliceblue;
 }
