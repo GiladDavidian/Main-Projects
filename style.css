@@ -270,6 +270,53 @@ body {
     border: 1px solid #000;
 }
 
+#containerForm {
+    width: 100%;
+    background-color: black;
+    direction: rtl;
+    background-image: url(logo1.png);
+    background-repeat: no-repeat;
+}
+
+form {
+    width: 50%;
+    padding: 50px;
+    color: aliceblue;
+}
+
+form h1 {
+    font-size: 3rem;
+}
+
+form p {
+    font-size: 1rem;
+    margin-top: 20px;
+}
+
+label {
+    display: block;
+    margin-top: 20px;
+}
+
+input {
+    width: 100%;
+    font-size: 2rem;
+    border-radius: 10px;
+}
+
+.DescriptionInput {
+    height: 200px;
+}
+
+.buttonInput {
+    width: 50%;
+    cursor: pointer;
+    margin-top: 20px;
+    border-radius: 5px;
+    border: none;
+    background-color: white;
+}
+
 #contact {
     height: 200px;
     background-color: black;
@@ -343,6 +390,14 @@ body {
     .boxProject button {
         text-align: center;
         font-size: 1rem;
+    }
+
+    #containerForm {
+        background-image: unset;
+    }
+
+    form {
+        width: 100%;
     }
 }
 
