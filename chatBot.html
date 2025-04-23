@@ -25,33 +25,53 @@
         }
 
         .chat-container {
-            width: 300px;
-            height: 400px;
+            width: 350px;
+            /* קצת יותר רחב */
+            height: 450px;
+            /* קצת יותר גבוה */
             border: 1px solid #ccc;
             margin: 20px auto;
             padding: 10px;
-            overflow-y: scroll;
+            overflow-y: auto;
+            /* שימוש ב-auto כדי להציג פס גלילה רק כשצריך */
+            display: flex;
+            flex-direction: column;
+            /* כדי שההודעות יסתדרו מלמעלה למטה */
+        }
+
+        .message-container {
+            display: flex;
+            width: 100%;
+            margin-bottom: 8px;
+            /* מרווח בין הודעות */
+            align-items: flex-start;
+            /* יישור אנכי של האייקונים */
         }
 
         .message {
-            margin: 5px;
-            padding: 8px;
-            border-radius: 5px;
+            padding: 10px 15px;
+            border-radius: 10px;
             direction: rtl;
+            word-break: break-word;
+            /* מניעת גלישה של מילים ארוכות */
+            flex-grow: 1;
+            /* מאפשר להודעה לגדול */
         }
 
-        .user {
+        .user-message {
             background-color: #e3f2fd;
             text-align: right;
+            border-bottom-right-radius: 0;
         }
 
-        .bot {
-            background-color: #f5f5f5;
+        .bot-message {
+            background-color: #f0f0f0;
             text-align: left;
+            border-bottom-left-radius: 0;
         }
 
         .input-area {
-            width: 300px;
+            width: 350px;
             margin: 0 auto;
             display: flex;
             gap: 10px;
@@ -60,11 +80,22 @@
 
         input {
             flex: 1;
-            padding: 5px;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
         }
 
         button {
-            padding: 5px 10px;
+            padding: 8px 15px;
+            border: none;
+            background-color: #4CAF50;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
         }
 
         .warning {
@@ -72,6 +103,66 @@
             text-align: center;
             color: black;
             font-weight: bold;
+            font-family: arial;
+            margin-top: 10px;
+            font-size: 0.9rem;
+        }
+
+        .bot-icon,
+        .user-icon {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background-color: #ccc;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 5px;
+            font-size: 1rem;
+            color: white;
+            flex-shrink: 0;
+            /* מניעת כיווץ האייקון */
+        }
+
+        .bot-icon {
+            background-color: #007bff;
+        }
+
+        .user-icon {
+            background-color: #28a745;
+        }
+
+        .loading-indicator {
+            text-align: left;
+            font-size: 0.8rem;
+            color: #777;
+            direction: rtl;
+            margin-right: 40px;
+            /* כדי שיהיה מיושר עם הודעת הבוט */
+        }
+
+        @keyframes blink {
+            50% {
+                opacity: 0;
+            }
+        }
+
+        .loading-dot {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background-color: #777;
+            margin-left: 3px;
+            animation: blink 1s infinite;
+        }
+
+        .loading-dot:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .loading-dot:nth-child(3) {
+            animation-delay: 0.4s;
         }
     </style>
 </head>
@@ -85,7 +176,10 @@
         </svg></h1>
     <p class="psichiP">הבוט האישי שלך!</p>
     <div class="chat-container" id="chat">
-        <div class="message bot">שלום! איך אני יכול לעזור לך?</div>
+        <div class="message-container">
+            <div class="bot-icon">🤖</div>
+            <div class="message bot-message">שלום! איך אני יכול לעזור לך?</div>
+        </div>
     </div>
     <div class="input-area">
         <input type="text" id="userInput" placeholder="כתוב הודעה...">
@@ -93,10 +187,9 @@
     </div>
     <p class="warning">הבוט משתמש במפתח API של גוגל, הבוט עלול לטעות ולכן יש לבדוק היטב את התשובות שלו.</p>
 
-
     <script>
-        // מפתח ה-API שסיפקת
         const API_KEY = 'AIzaSyAd12wmhDjKeS9zTBbzCyT5u2QFITx_afE';
+        const chatContainer = document.getElementById("chat");
 
         async function getBotResponse(userMessage) {
             try {
@@ -120,7 +213,6 @@
                 }
 
                 const data = await response.json();
-                // התגובה נמצאת תחת candidates[0].content.parts[0].text
                 return data.candidates[0].content.parts[0].text || "לא קיבלתי תגובה תקינה מה-API.";
             } catch (error) {
                 console.error('שגיאה:', error);
@@ -133,27 +225,46 @@
             const message = input.value.trim();
             if (message === "") return;
 
-            const chat = document.getElementById("chat");
-
             // הוספת הודעת המשתמש
-            const userMsg = document.createElement("div");
-            userMsg.className = "message user";
-            userMsg.textContent = message;
-            chat.appendChild(userMsg);
+            const userMessageContainer = document.createElement("div");
+            userMessageContainer.className = "message-container";
+            userMessageContainer.innerHTML = `
+                <div class="user-icon">👤</div>
+                <div class="message user-message">${message}</div>
+            `;
+            chatContainer.appendChild(userMessageContainer);
 
-            // תגובת הבוט מה-API
-            const botMsg = document.createElement("div");
-            botMsg.className = "message bot";
-            botMsg.textContent = "ממתין לתגובה..."; // תצוגה זמנית
-            chat.appendChild(botMsg);
+            // הוספת הודעת "טוען..." של הבוט
+            const botLoadingContainer = document.createElement("div");
+            botLoadingContainer.className = "message-container";
+            botLoadingContainer.innerHTML = `
+                <div class="bot-icon">🤖</div>
+                <div class="loading-indicator">
+                    ממתין לתגובה<span class="loading-dot"></span><span class="loading-dot"></span><span class="loading-dot"></span>
+                </div>
+            `;
+            chatContainer.appendChild(botLoadingContainer);
+
+            // גלילה למטה
+            chatContainer.scrollTop = chatContainer.scrollHeight;
+            input.value = ""; // ניקוי השדה מיד לאחר שליחה
 
             // קבלת תגובה מה-API ועדכון ההודעה
             const botResponse = await getBotResponse(message);
-            botMsg.textContent = botResponse;
 
-            // ניקוי השדה וגלילה למטה
-            input.value = "";
-            chat.scrollTop = chat.scrollHeight;
+            // הסרת הודעת הטעינה והוספת התגובה האמיתית
+            chatContainer.removeChild(botLoadingContainer);
+
+            const botMessageContainer = document.createElement("div");
+            botMessageContainer.className = "message-container";
+            botMessageContainer.innerHTML = `
+                <div class="bot-icon">🤖</div>
+                <div class="message bot-message">${botResponse}</div>
+            `;
+            chatContainer.appendChild(botMessageContainer);
+
+            // גלילה למטה לאחר קבלת התגובה
+            chatContainer.scrollTop = chatContainer.scrollHeight;
         }
 
         // שליחה עם Enter
@@ -162,6 +273,11 @@
                 sendMessage();
             }
         });
+
+        // גלילה אוטומטית לתחתית בעת טעינת הדף
+        window.onload = function () {
+            chatContainer.scrollTop = chatContainer.scrollHeight;
+        };
     </script>
 </body>
 
