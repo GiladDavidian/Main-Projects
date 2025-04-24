@@ -154,6 +154,17 @@ body {
     font-size: 1.2rem;
 }
 
+#programmingLanguages {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 30px;
+}
+
+#programmingLanguages svg {
+    width: 180px;
+    height: 180px;
+}
+
 #mySelf {
     text-align: center;
     margin-top: 30px;
@@ -377,6 +388,15 @@ input {
 
     #header2 p {
         font-size: 1.1rem;
+    }
+
+    #programmingLanguages {
+        margin-top: 10px;
+    }
+
+    #programmingLanguages svg {
+        width: 80px;
+        height: 80px;
     }
 
     #projects {

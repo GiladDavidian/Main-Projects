@@ -137,7 +137,6 @@ input::placeholder {
     background-color: aqua;
 }
 
-
 @media(max-width: 576px) {
     body {
         background-image: url(bgcBlue.jpeg);
