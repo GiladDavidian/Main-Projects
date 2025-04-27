@@ -11,6 +11,13 @@ body {
     font-family: arial;
 }
 
+.h1Top {
+    text-align: center;
+    font-size: 5rem;
+    font-family: Satisfy;
+    margin-top: 20px;
+}
+
 .fullContainer {
     display: flex;
     padding: 50px;
@@ -135,11 +142,21 @@ input::placeholder {
     margin-top: 10px;
     border-radius: 10px;
     background-color: aqua;
+    cursor: pointer;
+}
+
+.inputButton:hover {
+    color: white;
+    background-color: black;
 }
 
 @media(max-width: 576px) {
     body {
         background-image: url(bgcBlue.jpeg);
+    }
+
+    .h1Top {
+        font-size: 3.5rem;
     }
 
     .fullContainer {
@@ -148,7 +165,6 @@ input::placeholder {
 
     .container {
         width: 100vw;
-        margin-top: 40px;
     }
 
     .container2 {
