@@ -93,4 +93,40 @@ form {
 
 }
 
-@media(max-width: 576px) {}
+@media(max-width: 576px) {
+    .hero {
+        background-position: center;
+        margin-top: -50%;
+    }
+
+    .text {
+        left: unset;
+        margin-top: 8vh;
+    }
+
+    .text h1 {
+        font-size: 45px;
+        padding-inline: 20px;
+    }
+
+    .text p {
+        padding-inline: 50px;
+    }
+
+    .container {
+        width: 100vw;
+    }
+
+    form {
+        display: unset;
+    }
+
+    .container input {
+        width: 100vw;
+    }
+
+    .inputName,
+    .inputMail {
+        padding-inline: 100px;
+    }
+}

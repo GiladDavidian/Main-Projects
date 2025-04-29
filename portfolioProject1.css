@@ -61,6 +61,7 @@ body {
     text-decoration: none;
     border-radius: 10px;
     direction: rtl;
+    transition: color 0.3s ease;
 }
 
 #containerA a:hover {
